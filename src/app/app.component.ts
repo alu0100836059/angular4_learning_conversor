@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  form;
+
+  ngOnInit() {
+    this.form = new FormGroup ({
+      decimal: new FormControl(""),
+      binary: new FormControl(""),
+      octal: new FormControl(""),
+      hexa: new FormControl("")
+    })
+  }
 }
